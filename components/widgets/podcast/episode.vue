@@ -2,7 +2,7 @@
     <div v-if="episodeData">
         <h1>{{episodeData.title}}</h1>
         <br>
-        <audio controls>
+        <audio controls class="w-full">
             <source :src="episodeData.enclosure.url" type="audio/mpeg">
             Your browser does not support the audio tag.
         </audio>
@@ -22,6 +22,7 @@ export type Episode = {
 export default Vue.extend({
     name: 'PodcastEpisode',
     props: ['episodeData'],
+    components: {},
     data() {
         return {
 
@@ -31,4 +32,5 @@ export default Vue.extend({
     }
 })
 </script>
+
   
