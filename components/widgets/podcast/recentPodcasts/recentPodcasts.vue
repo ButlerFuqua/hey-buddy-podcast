@@ -1,14 +1,14 @@
 <template>
     <div>
-        <h1 v-if="!errorMessage">{{podcastTitle || 'Loading Podcast data'}}</h1>
-        <br>
-        <div v-if="episodes && !errorMessage">
+        <h1>Latest Podcast episodes</h1>
+        <NuxtLink class="text-blue-500" to="/podcast">View all episodes</NuxtLink>
+        <div v-if="!errorMessage && latestEpisodes">
             <PodcastEpisode v-for="episode in latestEpisodes" :key="episode.title" :episodeData="episode" />
         </div>
         <div v-else-if="!errorMessage">
             <p>Loading episodes...</p>
         </div>
-        <div v-else-if="errorMessage">
+        <div v-else>
             <p>{{errorMessage}}</p>
         </div>
     </div>
@@ -16,21 +16,10 @@
 
 <script lang="ts">
 import Vue from 'vue';
-import PodcastEpisode from '../episode.vue'
 import PodcastMixin from '../../../../mixins/podcast.vue'
-
-type Data = {
-
-}
 
 export default Vue.extend({
     name: 'RecentPodcastEpisodes',
-    components: { PodcastEpisode },
     mixins: [PodcastMixin],
-    data(): Data {
-        return {}
-    },
-    created() {
-    }
 });
 </script>

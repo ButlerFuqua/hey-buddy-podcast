@@ -18,18 +18,10 @@
 import Vue from 'vue'
 import PodcastMixin from '../../mixins/podcast.vue'
 
-type Data = {
-
-}
-
 export default Vue.extend({
     name: 'PodcastPage',
     components: {},
     mixins: [PodcastMixin],
-    data(): Data {
-        return {
-        }
-    },
 });
 </script>
   
