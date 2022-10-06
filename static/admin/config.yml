@@ -55,6 +55,25 @@ collections:
           - { label: Secondary Color, name: secondary, widget: color, hint: 'Secondary color; used for design' }
           - { label: Action Color, name: action, widget: color, hint: 'Attention-grabbing color used to click buttons' }
           - { label: Link Color, name: link, widget: color, hint: 'used for links to pages and other websites' }
+      - label: 'Images'
+        name: 'images'
+        file: 'content/site/images.json'
+        format: 'json'
+        editor:
+          preview: false
+        fields:
+          - { 
+              label: Landing Logo,
+              name: landinglogo,
+              widget: image,
+              hint: 'Square image that shows in the title of the landing page'
+            }
+          - { 
+              label: About Image,
+              name: aboutimage,
+              widget: image,
+              hint: 'Image that shows in the about page'
+            }
       - label: 'Podcast'
         name: 'podcast'
         file: 'content/site/podcast.json'
