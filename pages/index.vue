@@ -1,11 +1,9 @@
 <template>
   <div>
-    <h1 v-if="title">{{title}}</h1>
-    <h2 v-if="description">{{description}}</h2>
-    <div v-else-if="landingPageContent === 'info'">
+    <div v-if="landingPageContent === 'info'">
       <h2>Site info...</h2>
     </div>
-    <RecentPodcasts v-if="landingPageContent === 'podcast'" />
+    <RecentPodcasts v-else-if="landingPageContent === 'podcast'" />
     <RecentArticles v-else-if="landingPageContent === 'articles'" />
   </div>
 </template>
@@ -23,6 +21,7 @@ type Data = {
 
 export default Vue.extend({
   name: 'IndexPage',
+  layout: 'landing',
   components: { RecentPodcasts, RecentArticles },
   data(): Data {
     return {
