@@ -2,6 +2,7 @@ import * as SITE_INFO from './content/site/info.json'
 import * as CONTENT from './content/site/podcast.json'
 import * as COLOR from './content/site/color.json'
 import * as ARTICLES from './content/site/articles.json'
+import * as LANDING from './content/site/landing.json'
 
 export default {
   // Target: https://go.nuxtjs.dev/config-target
@@ -17,6 +18,7 @@ export default {
     colorAction: COLOR.action,
     colorLink: COLOR.link,
     articlesDisplayName: ARTICLES.displayname,
+    landingPageContent: LANDING.landingpagecontent,
   },
 
   // Global page headers: https://go.nuxtjs.dev/config-head

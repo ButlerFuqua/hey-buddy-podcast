@@ -31,6 +31,19 @@ collections:
               widget: string,
               pattern: ['^[a-z]{2}([-])?([A-Za-z]{2})?$', 'Must match "xx" or "xx-XX" syntax (ex. "en" or "sv-SE")'],
             }
+      - label: 'Landing Page Content'
+        name: 'landing'
+        file: 'content/site/landing.json'
+        format: 'json'
+        editor:
+          preview: false
+        fields:
+          - {
+              label: Landing Page Content,
+              name: landingpagecontent,
+              widget: select,
+              options: ["info", "articles", "podcast"],
+            }
       - label: 'Color'
         name: 'color'
         file: 'content/site/color.json'
