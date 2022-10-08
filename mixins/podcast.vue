@@ -3,7 +3,12 @@ import Vue from 'vue'
 import Parser from 'rss-parser';
 import PodcastEpisode from '../components/widgets/podcast/episode.vue'
 
-import { Episode } from '../components/widgets/podcast/episode.vue'
+export type Episode = {
+    title: string
+    enclosure: {
+        url: string
+    }
+};
 
 type Data = {
     podcastTitle: null | string,

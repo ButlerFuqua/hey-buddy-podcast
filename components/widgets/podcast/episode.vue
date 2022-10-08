@@ -1,6 +1,6 @@
 <template>
     <div v-if="episodeData">
-        <h1>{{episodeData.title}}</h1>
+        <p class="text-xl">{{episodeData.title}}</p>
         <br>
         <audio controls class="w-full">
             <source :src="episodeData.enclosure.url" type="audio/mpeg">
@@ -14,11 +14,7 @@
   
 <script lang="ts">
 import Vue from 'vue';
-import Parser from 'rss-parser';
 
-export type Episode = {
-
-}
 export default Vue.extend({
     name: 'PodcastEpisode',
     props: ['episodeData'],

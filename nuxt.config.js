@@ -3,6 +3,11 @@ import * as CONTENT from './content/site/podcast.json'
 import * as COLOR from './content/site/color.json'
 import * as ARTICLES from './content/site/articles.json'
 import * as LANDING from './content/site/landing.json'
+import * as IMAGES from './content/site/images.json'
+
+const tailwindCssFilePath = 'assets/css/tailwind.css';
+
+const colorPrimary = COLOR.primary;
 
 export default {
   // Target: https://go.nuxtjs.dev/config-target
@@ -13,12 +18,14 @@ export default {
     siteName: SITE_INFO.sitename,
     siteDescription: SITE_INFO.sitedescription,
     podcastRssFeed: CONTENT.podcastrssfeed,
-    colorPrimary: COLOR.primary,
+    colorPrimary,
     colorSecondary: COLOR.secondary,
     colorAction: COLOR.action,
     colorLink: COLOR.link,
     articlesDisplayName: ARTICLES.displayname,
     landingPageContent: LANDING.landingpagecontent,
+    landingLogo: IMAGES.landinglogo,
+    aboutimage: IMAGES.aboutimage,
   },
 
   // Global page headers: https://go.nuxtjs.dev/config-head
@@ -48,7 +55,8 @@ export default {
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
-    '@/assets/scss/main'
+    '@/assets/scss/main',
+    `@/${tailwindCssFilePath}`
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
@@ -64,6 +72,7 @@ export default {
     '@nuxt/typescript-build',
     // https://go.nuxtjs.dev/tailwindcss
     '@nuxtjs/tailwindcss',
+    '@nuxt/postcss8',
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
@@ -77,5 +86,21 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
+    postcss: {
+      plugins: {
+        tailwindcss: {},
+        autoprefixer: {},
+      },
+    },
+  },
+
+  tailwindcss: {
+    cssPath: `~/${tailwindCssFilePath}s`,
+    configPath: 'tailwind.config.js',
+    exposeConfig: false,
+    config: {},
+    injectPosition: 0,
+    viewer: true,
   }
+
 }
