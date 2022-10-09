@@ -1,7 +1,7 @@
 <template>
     <div class="h-full">
         <MainNav />
-        <div class="bg-blue-500 ">
+        <div class="">
             <div class="p-3 flex items-center container xl m-auto h-full">
                 <img id="landingLogo" class="rounded" v-if="landingLogo" :src="landingLogo" alt="Logo Image" />
                 <div class="p-3">

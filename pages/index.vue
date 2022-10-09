@@ -1,10 +1,12 @@
 <template>
-  <div>
+  <div class="h-full">
     <div v-if="landingPageContent === 'info'">
       <h2>Site info...</h2>
     </div>
-    <RecentPodcasts v-else-if="landingPageContent === 'podcast'" />
-    <RecentArticles v-else-if="landingPageContent === 'articles'" />
+    <div v-else class="p-2 h-full">
+      <RecentPodcasts v-if="landingPageContent === 'podcast'" />
+      <RecentArticles v-else-if="landingPageContent === 'articles'" />
+    </div>
   </div>
 </template>
 
