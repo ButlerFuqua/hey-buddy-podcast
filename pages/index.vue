@@ -1,11 +1,14 @@
 <template>
-  <div class="h-full">
-    <div v-if="landingPageContent === 'info'">
-      <h2>Site info...</h2>
-    </div>
-    <div v-else class="p-2 h-full">
-      <RecentPodcasts v-if="landingPageContent === 'podcast'" />
+  <div class="p-2 h-full flex flex-col md:flex-row">
+    <div class="flex-grow">
+      <div v-if="landingPageContent === 'info'">
+        <h2>Site info...</h2>
+      </div>
+      <RecentPodcasts v-else-if="landingPageContent === 'podcast'" />
       <RecentArticles v-else-if="landingPageContent === 'articles'" />
+    </div>
+    <div id="sidebar" class="w-100 md:w-80 p-2">
+      Sidebar...
     </div>
   </div>
 </template>

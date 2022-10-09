@@ -1,7 +1,7 @@
 <template>
     <div>
         <button @click="toggleMenu()"
-            class="bg-blue-400 hover:bg-blue-600 transition-all z-20 fixed right-2 top-2 p-2 rounded">
+            class="bg-green-400 hover:bg-green-600 transition-all z-20 fixed right-2 top-2 p-2 rounded">
             Menu
         </button>
         <div :class="closed ? 'closed' : 'right-0'"
