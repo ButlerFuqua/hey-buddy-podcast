@@ -19,7 +19,7 @@ export default Vue.extend({
     },
     methods: {
         async fetchPosts() {
-            this.articles = (await this.$content("articles").fetch()) as FetchReturn[];
+            this.articles = (await this.$content("articles").sortBy('updatedAt', 'desc').fetch()) as FetchReturn[];
             this.setLatestArticles();
         },
         setLatestArticles() {

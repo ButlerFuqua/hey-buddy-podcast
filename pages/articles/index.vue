@@ -1,8 +1,10 @@
 <template>
   <div>
     <PageTitle title="Articles" />
-    <div v-if="articles">
-      <ArticleThumbnail v-for="article in articles" :key="article.slug" :articleData="article" />
+    <div v-if="articles" class="flex flex-wrap justify-center">
+      <div class="articleThumbnail" v-for="article in articles" :key="article.slug">
+        <ArticleThumbnail :articleData="article" />
+      </div>
     </div>
     <div v-else>Loading...</div>
   </div>
@@ -36,3 +38,15 @@ export default Vue.extend({
   }
 })
 </script>
+
+<style lang="scss" scoped>
+.articleThumbnail {
+  width: 45%;
+  margin: 0.5rem;
+  max-width: 100%;
+
+  @media (max-width: 800px) {
+    width: 100%
+  }
+}
+</style>

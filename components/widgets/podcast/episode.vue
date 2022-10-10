@@ -8,10 +8,11 @@
         </audio>
         <div class="flex justify-end">
             <button @click="showDescription = true"
-                class="bg-green-400 hover:bg-green-300 transition-all eas-in-out p-2 rounded">Read
-                Description</button>
+                class="text-green-500 hover:text-green-400 font-bold transition-all eas-in-out p-2 rounded">
+                Show Notes
+            </button>
         </div>
-        <div v-if="showDescription" class="fixed h-full w-full top-0 left-0  bg-white z-30">
+        <div id="showNotes" v-if="showDescription" class="fixed h-full w-full top-0 left-0  bg-white z-30">
             <button v-if="showDescription" @click="showDescription = false"
                 class="bg-green-400 hover:bg-green-300 transition-all eas-in-out0 p-2 rounded fixed top-3 right-3 z-50">Close</button>
             <div class="container xl mt-5 m-auto h-full">

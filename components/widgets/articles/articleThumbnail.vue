@@ -1,6 +1,7 @@
 <template>
     <div v-if="article" class="border p-2 my-3">
         <p class="text-xl bold text-green-500 font-black">{{article.title}}</p>
+        <p>{{new Date(article.createdAt).toLocaleDateString()}}</p>
         <p>{{article.description}}</p>
         <NuxtLink :to="article.path">
             <button class="text-purple-500 font-bold">Read more</button>

@@ -7,13 +7,7 @@
       <RecentPodcasts v-else-if="landingPageContent === 'podcast'" />
       <RecentArticles v-else-if="landingPageContent === 'articles'" />
     </div>
-    <div id="sidebar" class="w-100 md:w-80 p-2">
-      <div v-if="landingPageContent !== 'info'">
-        <h2>Site info...</h2>
-      </div>
-      <RecentPodcasts v-if="landingPageContent !== 'podcast'" />
-      <RecentArticles v-if="landingPageContent !== 'articles'" />
-    </div>
+    <Sidebar :landingPageContent="landingPageContent" />
   </div>
 </template>
 
@@ -21,6 +15,7 @@
 import Vue from 'vue';
 import RecentPodcasts from '../components/widgets/podcast/recentPodcasts/recentPodcasts.vue'
 import RecentArticles from '../components/widgets/articles/recentArticles/recentArticles.vue'
+import Sidebar from '~/components/layout/sidebar.vue';
 
 type Data = {
   title: string | null,
@@ -31,7 +26,7 @@ type Data = {
 export default Vue.extend({
   name: 'IndexPage',
   layout: 'landing',
-  components: { RecentPodcasts, RecentArticles },
+  components: { RecentPodcasts, RecentArticles, Sidebar },
   data(): Data {
     return {
       title: null,
