@@ -8,7 +8,11 @@
       <RecentArticles v-else-if="landingPageContent === 'articles'" />
     </div>
     <div id="sidebar" class="w-100 md:w-80 p-2">
-      Sidebar...
+      <div v-if="landingPageContent !== 'info'">
+        <h2>Site info...</h2>
+      </div>
+      <RecentPodcasts v-if="landingPageContent !== 'podcast'" />
+      <RecentArticles v-if="landingPageContent !== 'articles'" />
     </div>
   </div>
 </template>

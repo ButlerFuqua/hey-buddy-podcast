@@ -2,13 +2,7 @@
   <div>
     <PageTitle title="Articles" />
     <div v-if="articles">
-      <div v-for="article in articles" :key="article.slug">
-        <h1>{{article.title}}</h1>
-        <p>{{article.description}}</p>
-        <NuxtLink :to="article.path">
-          <p>Read more</p>
-        </NuxtLink>
-      </div>
+      <ArticleThumbnail v-for="article in articles" :key="article.slug" :fetchReturn="article" />
     </div>
     <div v-else>Loading...</div>
   </div>
@@ -18,17 +12,18 @@
 import { FetchReturn } from '@nuxt/content/types/query-builder'
 import Vue from 'vue'
 import PageTitle from '../../components/layout/pageTitle.vue'
+import ArticleThumbnail from '../../components/widgets/articles/articleThumbnail.vue'
 
 type Data = {
-  articles: FetchReturn[]
+  articles: null | FetchReturn[]
 }
 
 export default Vue.extend({
   name: 'ArticlesIndexPage',
-  components: { PageTitle },
+  components: { PageTitle, ArticleThumbnail },
   data(): Data {
     return {
-      articles: null as null | any,
+      articles: null,
     }
   },
   methods: {
