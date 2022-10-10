@@ -1,15 +1,16 @@
 <template>
     <div>
-        <h1 v-if="!errorMessage">{{podcastTitle || 'Loading Podcast data'}}</h1>
-        <br>
-        <div v-if="episodes && !errorMessage">
-            <PodcastEpisode v-for="episode in episodes" :key="episode.title" :episodeData="episode" />
-        </div>
-        <div v-else-if="!errorMessage">
-            <p>Loading episodes...</p>
-        </div>
-        <div v-else-if="errorMessage">
-            <p>{{errorMessage}}</p>
+        <PageTitle :title="podcastTitle" />
+        <div class="p-2">
+            <div v-if="episodes && !errorMessage">
+                <PodcastEpisode v-for="episode in episodes" :key="episode.title" :episodeData="episode" />
+            </div>
+            <div v-else-if="!errorMessage">
+                <p>Loading episodes...</p>
+            </div>
+            <div v-else-if="errorMessage">
+                <p>{{errorMessage}}</p>
+            </div>
         </div>
     </div>
 </template>
@@ -17,10 +18,11 @@
 <script lang="ts">
 import Vue from 'vue'
 import PodcastMixin from '../../mixins/podcast.vue'
+import PageTitle from '~/components/layout/pageTitle.vue';
 
 export default Vue.extend({
     name: 'PodcastPage',
-    components: {},
+    components: { PageTitle },
     mixins: [PodcastMixin],
 });
 </script>

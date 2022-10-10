@@ -1,9 +1,11 @@
 <template>
   <div v-if="article">
     <PageTitle :title="article.title || 'Loading...'" :breadCrumbDTOs="breadCrumbs" />
-    <img v-if="article.featuredimage" :src="article.featuredimage" class="rounded" />
+    <div class="p-2">
+      <img v-if="article.featuredimage" :src="article.featuredimage" class="rounded" />
+    </div>
     <div v-if="article">
-      <nuxt-content :document="article" />
+      <nuxt-content class="p-2" :document="article" />
     </div>
     <div v-else>Loading...</div>
   </div>

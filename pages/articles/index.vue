@@ -1,7 +1,7 @@
 <template>
   <div>
     <PageTitle title="Articles" />
-    <div v-if="articles" class="flex flex-wrap justify-center">
+    <div v-if="articles" class="flex flex-wrap justify-center p-2">
       <div class="articleThumbnail" v-for="article in articles" :key="article.slug">
         <ArticleThumbnail :articleData="article" />
       </div>
