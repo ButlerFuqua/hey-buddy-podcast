@@ -1,6 +1,7 @@
 <template>
     <div v-if="article" class="border p-2 my-3">
         <p class="text-xl bold text-green-500 font-black">{{article.title}}</p>
+        <img v-if="article.featuredimage" :src="article.featuredimage" class="rounded" />
         <p>{{new Date(article.createdAt).toLocaleDateString()}}</p>
         <p>{{article.description}}</p>
         <NuxtLink :to="article.path">

@@ -1,6 +1,7 @@
 <template>
   <div v-if="article">
     <PageTitle :title="article.title || 'Loading...'" :breadCrumbDTOs="breadCrumbs" />
+    <img v-if="article.featuredimage" :src="article.featuredimage" class="rounded" />
     <div v-if="article">
       <nuxt-content :document="article" />
     </div>
