@@ -100,7 +100,7 @@ collections:
       preview: false
     fields:
       - { label: 'Title', name: 'title', widget: 'string' }
-      - { label: 'Featured Image', name: 'featuredimage', widget: 'image' }
+      - { label: 'Featured Image', name: 'featuredimage', widget: 'image', required: false }
       - { label: 'Publish Date', name: 'date', widget: 'datetime' }
       - { label: 'Description', name: 'description', widget: 'string' }
       - { label: 'Body', name: 'body', widget: 'markdown' }
@@ -114,7 +114,7 @@ collections:
       preview: false
     fields:
       - { label: 'Title', name: 'title', widget: 'string' }
-      - { label: 'Publish Date', name: 'dates', widget: 'datestime' }
+      - { label: 'Publish Date', name: 'dates', widget: 'datetime' }
       - { label: 'Description', name: 'description', widget: 'string' }
   - name: 'link'
     label: 'Link'
