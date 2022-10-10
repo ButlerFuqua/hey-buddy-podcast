@@ -1,11 +1,13 @@
 <template>
     <div v-if="article" class="border p-2 my-3">
-        <p class="text-xl bold text-green-500 font-black">{{article.title}}</p>
+        <p @click="() => navToArticle(article)"
+            class="text-xl bold text-green-500 hover:text-green-400 transition-all font-black cursor-pointer">
+            {{article.title}}</p>
         <img v-if="article.featuredimage" :src="article.featuredimage" class="rounded" />
         <p>{{new Date(article.createdAt).toLocaleDateString()}}</p>
         <p>{{article.description}}</p>
         <NuxtLink :to="article.path">
-            <button class="text-purple-500 font-bold">Read more</button>
+            <button class="text-purple-500 font-bold hover:text-purple-400 transition-all">Read more</button>
         </NuxtLink>
     </div>
 </template>
@@ -25,6 +27,11 @@ export default Vue.extend({
     data(): Data {
         return {
             article: null
+        }
+    },
+    methods: {
+        navToArticle(article: any) {
+            this.$router.push(article.path)
         }
     },
     created() {

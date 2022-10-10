@@ -85,7 +85,14 @@ export default Vue.extend({
             if (this.closed) return;
 
             const path = this.$route.path
-            let active = this.navItems?.find(item => item.path.includes(path))
+            if (path === '/') {
+                const home = this.navItems?.find(item => item.path === '/');
+                if (home) {
+                    home.active = true;
+                }
+                return
+            }
+            let active = this.navItems?.find(item => path.includes(item.path) && item.path !== '/');
             if (active) {
                 active.active = true;
             }
