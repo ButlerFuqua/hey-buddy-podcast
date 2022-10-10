@@ -1,9 +1,9 @@
 <template>
-    <div v-if="article">
-        <h1>{{article.title}}</h1>
+    <div v-if="article" class="border p-2 my-3">
+        <p class="text-xl bold text-green-500 font-black">{{article.title}}</p>
         <p>{{article.description}}</p>
         <NuxtLink :to="article.path">
-            <p>Read more</p>
+            <button class="text-purple-500 font-bold">Read more</button>
         </NuxtLink>
     </div>
 </template>
@@ -19,14 +19,14 @@ type Data = {
 
 export default Vue.extend({
     name: 'ArticleThumbnail',
-    props: ['fetchReturn'],
+    props: ['articleData'],
     data(): Data {
         return {
             article: null
         }
     },
     created() {
-        this.article = this.fetchReturn as FetchReturn;
+        this.article = this.articleData as FetchReturn;
     }
 })
 </script>

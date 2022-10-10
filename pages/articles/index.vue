@@ -2,7 +2,7 @@
   <div>
     <PageTitle title="Articles" />
     <div v-if="articles">
-      <ArticleThumbnail v-for="article in articles" :key="article.slug" :fetchReturn="article" />
+      <ArticleThumbnail v-for="article in articles" :key="article.slug" :articleData="article" />
     </div>
     <div v-else>Loading...</div>
   </div>
