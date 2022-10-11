@@ -47,11 +47,10 @@ export default Vue.extend({
         async setOneEpisode(episodeId: string | number) {
             try {
                 const { data: episode }: AxiosResponse<Episode> = await axios.post('/api/one-episode', { episodeId })
-                console.log('episode', episode)
                 this.oneEpisode = episode;
             } catch (error) {
                 console.error(error)
-                this.errorMessage = `Error getting podcast episodes`
+                this.errorMessage = `Error getting podcast episode`
             }
         }
     },
