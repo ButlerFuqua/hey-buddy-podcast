@@ -3,7 +3,7 @@
         <p class="text-xl">{{episodeData.title}}</p>
         <br>
         <audio controls class="w-full mb-2">
-            <source :src="episodeData.enclosure.url" type="audio/mpeg">
+            <source :src="episodeData.audio_url" type="audio/mpeg">
             Your browser does not support the audio tag.
         </audio>
         <div class="flex justify-end">
