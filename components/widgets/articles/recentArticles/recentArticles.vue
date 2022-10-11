@@ -1,6 +1,6 @@
 <template>
     <div>
-        <h3>Latest Articles</h3>
+        <p class="text-xl">Latest Articles</p>
         <NuxtLink class="text-blue-500" to="/articles">View all articles</NuxtLink>
         <div v-if="latestArticles">
             <ArticleThumbnail v-for="article in latestArticles" :key="article.title" :articleData="article" />

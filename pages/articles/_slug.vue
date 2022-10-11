@@ -1,8 +1,16 @@
 <template>
   <div v-if="article">
     <PageTitle :title="article.title || 'Loading...'" :breadCrumbDTOs="breadCrumbs" />
+    <div class="p-2 text-gray-600 flex justify-between">
+      <p>Created: {{returnFriendlyDate(article.createdAt)}}</p>
+      <p>Last updated: {{returnFriendlyDate(article.createdAt)}}</p>
+    </div>
     <div class="p-2">
       <img v-if="article.featuredimage" :src="article.featuredimage" class="rounded" />
+    </div>
+    <div class="tldr bg-gray-200 rounded p-4 my-5">
+      <p class="text-lg font-black">TL;DR</p>
+      <p>{{article.description}}</p>
     </div>
     <div v-if="article">
       <nuxt-content class="p-2" :document="article" />
@@ -18,6 +26,8 @@
 import { FetchReturn } from '@nuxt/content/types/query-builder';
 import Vue from 'vue'
 import PageTitle, { BreadCrumb } from '../../components/layout/pageTitle.vue'
+
+import { returnFriendlyDate } from '../../utils/string.utils';
 
 type Data = {
   article: FetchReturn | null,
@@ -51,7 +61,10 @@ export default Vue.extend({
           current: true
         },
       ]
-    }
+    },
+    returnFriendlyDate(dateString: string) {
+      return returnFriendlyDate(dateString);
+    },
   },
   async beforeMount() {
     this.articlesDisplayName = process.env.articlesDisplayName || 'Articles';
