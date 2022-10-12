@@ -1,6 +1,6 @@
 <template>
   <div v-if="article">
-    <PageTitle :title="article.title || 'Loading...'" :breadCrumbDTOs="breadCrumbs" />
+    <PageTitle :title="article.title" :breadCrumbDTOs="breadCrumbs" />
     <div class="p-2 text-gray-600 flex justify-between">
       <p>Created: {{returnFriendlyDate(article.createdAt)}}</p>
       <p>Last updated: {{returnFriendlyDate(article.createdAt)}}</p>
@@ -15,11 +15,9 @@
     <div v-if="article">
       <nuxt-content class="p-2" :document="article" />
     </div>
-    <div v-else>Loading...</div>
+    <FullLoader v-else />
   </div>
-  <div v-else>
-    Loading...
-  </div>
+  <FullLoader v-else />
 </template>
 
 <script lang="ts">
@@ -28,6 +26,7 @@ import Vue from 'vue'
 import PageTitle, { BreadCrumb } from '../../components/layout/pageTitle.vue'
 
 import { returnFriendlyDate } from '../../utils/string.utils';
+import FullLoader from '~/components/layout/fullLoader.vue';
 
 type Data = {
   article: FetchReturn | null,
@@ -37,7 +36,7 @@ type Data = {
 
 export default Vue.extend({
   name: 'ArticlePage',
-  components: { PageTitle },
+  components: { PageTitle, FullLoader },
   data(): Data {
     return {
       article: null,

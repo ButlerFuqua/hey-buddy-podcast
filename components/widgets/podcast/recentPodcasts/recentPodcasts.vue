@@ -5,21 +5,21 @@
         <div v-if="!errorMessage && latestEpisodes">
             <PodcastEpisode v-for="episode in latestEpisodes" :key="episode.title" :episodeData="episode" />
         </div>
-        <div v-else-if="!errorMessage">
-            <p>Loading episodes...</p>
-        </div>
-        <div v-else>
+        <div v-else-if="erroeMessage">
             <p>{{errorMessage}}</p>
         </div>
+        <FullLoader v-else />
     </div>
 </template>
 
 <script lang="ts">
 import Vue from 'vue';
 import PodcastMixin from '../../../../mixins/podcast.vue'
+import FullLoader from '~/components/layout/fullLoader.vue';
 
 export default Vue.extend({
-    name: 'RecentPodcastEpisodes',
+    name: "RecentPodcastEpisodes",
     mixins: [PodcastMixin],
+    components: { FullLoader }
 });
 </script>

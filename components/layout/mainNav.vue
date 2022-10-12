@@ -18,15 +18,14 @@
                     </li>
                 </ul>
             </div>
-            <div v-else>
-                Loading...
-            </div>
+            <FullLoader v-else />
         </div>
     </div>
 </template>
 
 <script lang="ts">
 import Vue from 'vue'
+import FullLoader from './fullLoader.vue'
 
 type Data = {
     navItems: null | NavItem[]
@@ -45,54 +44,53 @@ export type NavItem = {
     active?: boolean
 }
 export default Vue.extend({
-    name: 'MainNav',
+    name: "MainNav",
+    components: { FullLoader },
     data(): Data {
         return {
             closed: true,
             navItems: null,
             articlesDisplayName: null,
-
-        }
+        };
     },
     methods: {
         async loadNavItems() {
-            this.articlesDisplayName = process.env.articlesDisplayName || 'Articles';
+            this.articlesDisplayName = process.env.articlesDisplayName || "Articles";
             this.navItems = [
                 {
-                    path: '/',
-                    label: 'Home',
+                    path: "/",
+                    label: "Home",
                     type: NavType.nativeLink,
                     active: false
                 },
                 {
-                    path: '/articles',
+                    path: "/articles",
                     label: this.articlesDisplayName,
                     type: NavType.nativeLink,
                     active: false
                 },
                 {
-                    path: '/podcast',
-                    label: 'Podcast',
+                    path: "/podcast",
+                    label: "Podcast",
                     type: NavType.nativeLink,
                     active: false
                 },
             ];
-
         },
         toggleMenu() {
             this.closed = !this.closed;
             this.navItems?.forEach(item => item.active = false);
-            if (this.closed) return;
-
-            const path = this.$route.path
-            if (path === '/') {
-                const home = this.navItems?.find(item => item.path === '/');
+            if (this.closed)
+                return;
+            const path = this.$route.path;
+            if (path === "/") {
+                const home = this.navItems?.find(item => item.path === "/");
                 if (home) {
                     home.active = true;
                 }
-                return
+                return;
             }
-            let active = this.navItems?.find(item => path.includes(item.path) && item.path !== '/');
+            let active = this.navItems?.find(item => path.includes(item.path) && item.path !== "/");
             if (active) {
                 active.active = true;
             }
@@ -100,24 +98,22 @@ export default Vue.extend({
         navAction(navItem: any) {
             switch (navItem.type) {
                 case NavType.nativeLink:
-                    this.$nuxt.$router.push(navItem.path)
+                    this.$nuxt.$router.push(navItem.path);
                     this.closed = true;
                     break;
-
                 case NavType.internalNewTab:
                     let routeData = this.$router.resolve({ name: navItem.path, });
-                    window.open(routeData.href, '_blank');
+                    window.open(routeData.href, "_blank");
                     break;
-
                 default:
-                    console.error(`nav type not covered`, navItem)
+                    console.error(`nav type not covered`, navItem);
                     break;
             }
         },
     },
     async beforeMount() {
         await this.loadNavItems();
-    },
+    }
 })
 </script>
 

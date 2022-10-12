@@ -6,7 +6,7 @@
         <ArticleThumbnail :articleData="article" />
       </div>
     </div>
-    <div v-else>Loading...</div>
+    <FullLoader v-else />
   </div>
 </template>
 
@@ -15,6 +15,7 @@ import { FetchReturn } from '@nuxt/content/types/query-builder'
 import Vue from 'vue'
 import PageTitle from '../../components/layout/pageTitle.vue'
 import ArticleThumbnail from '../../components/widgets/articles/articleThumbnail.vue'
+import FullLoader from '~/components/layout/fullLoader.vue'
 
 type Data = {
   articles: null | FetchReturn[]
@@ -22,7 +23,7 @@ type Data = {
 
 export default Vue.extend({
   name: 'ArticlesIndexPage',
-  components: { PageTitle, ArticleThumbnail },
+  components: { PageTitle, ArticleThumbnail, FullLoader },
   data(): Data {
     return {
       articles: null,

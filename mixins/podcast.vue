@@ -7,7 +7,12 @@ export type Episode = {
     title: string
     audio_url: string
     description: string
-    guid: string
+    id: string | number
+    published_at: string
+    season_number: number
+    episode_number: number
+    total_plays: number
+    'content:encoded': string
 };
 
 type Data = {
@@ -37,22 +42,12 @@ export default Vue.extend({
         async fetchAllPodcastData() {
             try {
                 const { data: episodes }: AxiosResponse<Episode[]> = await axios.get('/api/all-episodes')
-                console.log('episodes', episodes)
                 this.episodes = episodes;
             } catch (error) {
                 console.error(error)
                 this.errorMessage = `Error getting podcast episodes`
             }
         },
-        async setOneEpisode(episodeId: string | number) {
-            try {
-                const { data: episode }: AxiosResponse<Episode> = await axios.post('/api/one-episode', { episodeId })
-                this.oneEpisode = episode;
-            } catch (error) {
-                console.error(error)
-                this.errorMessage = `Error getting podcast episode`
-            }
-        }
     },
     async created() {
         await this.fetchAllPodcastData();

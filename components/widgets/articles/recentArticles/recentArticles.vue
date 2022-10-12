@@ -5,9 +5,7 @@
         <div v-if="latestArticles">
             <ArticleThumbnail v-for="article in latestArticles" :key="article.title" :articleData="article" />
         </div>
-        <div v-else>
-            <p>Loading articles...</p>
-        </div>
+        <FullLoader />
     </div>
 </template>
 
@@ -17,9 +15,11 @@ import Vue from 'vue';
 import ArticleThumbnail from '../../../../components/widgets/articles/articleThumbnail.vue'
 
 import ArticlesMixin from '../../../../mixins/articles.vue'
+import FullLoader from '~/components/layout/fullLoader.vue';
 
 export default Vue.extend({
-    name: 'RecentArticles',
-    mixins: [ArticlesMixin]
+    name: "RecentArticles",
+    mixins: [ArticlesMixin],
+    components: { ArticleThumbnail, FullLoader }
 });
 </script>
