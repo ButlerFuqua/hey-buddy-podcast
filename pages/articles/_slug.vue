@@ -1,6 +1,7 @@
 <template>
   <div v-if="article">
     <PageTitle :title="article.title" :breadCrumbDTOs="breadCrumbs" />
+    <ShareButton />
     <div class="p-2 text-gray-600 flex justify-between">
       <p>Created: {{returnFriendlyDate(article.createdAt)}}</p>
       <p>Last updated: {{returnFriendlyDate(article.updatedAt)}}</p>
@@ -12,10 +13,8 @@
       <p class="text-lg font-black">TL;DR</p>
       <p>{{article.description}}</p>
     </div>
-    <div v-if="article">
-      <nuxt-content class="p-2" :document="article" />
-    </div>
-    <FullLoader v-else />
+    <nuxt-content class="p-2" :document="article" />
+    <ShareButton />
   </div>
   <FullLoader v-else />
 </template>
@@ -23,7 +22,8 @@
 <script lang="ts">
 import { FetchReturn } from '@nuxt/content/types/query-builder';
 import Vue from 'vue'
-import PageTitle, { BreadCrumb } from '../../components/layout/pageTitle.vue'
+import PageTitle, { BreadCrumb } from '../../components/layout/pageTitle.vue';
+import ShareButton from '../../components/widgets/share/shareButton.vue'
 
 import { returnFriendlyDate } from '../../utils/string.utils';
 import FullLoader from '~/components/layout/fullLoader.vue';
@@ -36,7 +36,7 @@ type Data = {
 
 export default Vue.extend({
   name: 'ArticlePage',
-  components: { PageTitle, FullLoader },
+  components: { PageTitle, FullLoader, ShareButton },
   data(): Data {
     return {
       article: null,

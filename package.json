@@ -7,7 +7,7 @@
     "build": "nuxt build",
     "start": "nuxt start",
     "generate": "nuxt generate",
-    "netlify": "netlify dev"
+    "n": "netlify dev"
   },
   "dependencies": {
     "@nuxt/content": "^1.15.1",
