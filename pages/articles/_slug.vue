@@ -1,7 +1,7 @@
 <template>
   <div v-if="article">
     <PageTitle :title="article.title" :breadCrumbDTOs="breadCrumbs" />
-    <ShareButton />
+    <!-- <ShareButton /> -->
     <div class="p-2 text-gray-600 flex justify-between">
       <p>Created: {{returnFriendlyDate(article.createdAt)}}</p>
       <p>Last updated: {{returnFriendlyDate(article.updatedAt)}}</p>
@@ -14,7 +14,7 @@
       <p>{{article.description}}</p>
     </div>
     <nuxt-content class="p-2" :document="article" />
-    <ShareButton />
+    <!-- <ShareButton /> -->
   </div>
   <FullLoader v-else />
 </template>
