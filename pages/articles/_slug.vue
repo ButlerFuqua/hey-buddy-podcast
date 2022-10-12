@@ -3,7 +3,7 @@
     <PageTitle :title="article.title" :breadCrumbDTOs="breadCrumbs" />
     <div class="p-2 text-gray-600 flex justify-between">
       <p>Created: {{returnFriendlyDate(article.createdAt)}}</p>
-      <p>Last updated: {{returnFriendlyDate(article.createdAt)}}</p>
+      <p>Last updated: {{returnFriendlyDate(article.updatedAt)}}</p>
     </div>
     <div class="p-2">
       <img v-if="article.featuredimage" :src="article.featuredimage" class="rounded" />

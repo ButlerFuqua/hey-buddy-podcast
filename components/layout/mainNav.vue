@@ -75,6 +75,12 @@ export default Vue.extend({
                     type: NavType.nativeLink,
                     active: false
                 },
+                {
+                    path: "/updates",
+                    label: 'Updates',
+                    type: NavType.nativeLink,
+                    active: false
+                },
             ];
         },
         toggleMenu() {
