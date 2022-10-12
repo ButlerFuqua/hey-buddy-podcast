@@ -1,7 +1,6 @@
 <template>
   <div v-if="article">
     <PageTitle :title="article.title" :breadCrumbDTOs="breadCrumbs" />
-    <!-- <ShareButton /> -->
     <div class="p-2 text-gray-600 flex justify-between">
       <p>Created: {{returnFriendlyDate(article.createdAt)}}</p>
       <p>Last updated: {{returnFriendlyDate(article.updatedAt)}}</p>
