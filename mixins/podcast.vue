@@ -16,7 +16,7 @@ export type Episode = {
 };
 
 type Data = {
-    podcastTitle: null | string,
+    podcastTitle: string
     episodes: null | Episode[],
     latestEpisodes: null | Episode[],
     oneEpisode: null | Episode,
@@ -28,7 +28,7 @@ export default Vue.extend({
     components: { PodcastEpisode },
     data(): Data {
         return {
-            podcastTitle: null,
+            podcastTitle: 'Hey Buddy',
             episodes: null,
             latestEpisodes: null,
             errorMessage: null,
@@ -42,7 +42,7 @@ export default Vue.extend({
         async fetchAllPodcastData() {
             try {
                 const { data: episodes }: AxiosResponse<Episode[]> = await axios.get('/api/all-episodes')
-                this.episodes = episodes;
+                this.episodes = episodes.filter(episode => episode.season_number !== 99);
             } catch (error) {
                 console.error(error)
                 this.errorMessage = `Error getting podcast episodes`

@@ -5,7 +5,7 @@
         <div v-if="latestArticles">
             <ArticleThumbnail v-for="article in latestArticles" :key="article.title" :articleData="article" />
         </div>
-        <FullLoader />
+        <FullLoader v-else />
     </div>
 </template>
 

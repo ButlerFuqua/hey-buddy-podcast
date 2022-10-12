@@ -1,6 +1,6 @@
 <template>
     <div id="sidebar" class="w-100 md:w-96 lg:w-2/5 p-2">
-        <SiteInfo class="siteInfoWidget my-3" v-if="landingPageContent !== 'info'" />
+        <!-- <SiteInfo class="siteInfoWidget my-3" v-if="landingPageContent !== 'info'" /> -->
         <RecentPodcasts class="my-3" v-if="landingPageContent !== 'podcast'" />
         <RecentArticles class="my-3" v-if="landingPageContent !== 'articles'" />
     </div>

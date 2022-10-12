@@ -3,7 +3,7 @@
         <PageTitle :title="podcastTitle" />
         <div class="p-2">
             <div v-if="episodes && !errorMessage">
-                <PodcastEpisode v-for="episode in episodes" :key="episode.title" :episodeData="episode" />
+                <PodcastEpisode v-for="episode in episodes" :key="episode.id" :episodeData="episode" />
             </div>
             <div v-else-if="errorMessage">
                 <p>{{errorMessage}}</p>
@@ -18,10 +18,11 @@ import Vue from 'vue'
 import PodcastMixin from '../../mixins/podcast.vue'
 import PageTitle from '~/components/layout/pageTitle.vue';
 import FullLoader from '~/components/layout/fullLoader.vue';
+import PodcastEpisode from '~/components/widgets/podcast/episode.vue'
 
 export default Vue.extend({
     name: 'PodcastPage',
-    components: { PageTitle, FullLoader },
+    components: { PodcastEpisode, PageTitle, FullLoader },
     mixins: [PodcastMixin],
 });
 </script>
