@@ -12,7 +12,7 @@ T﻿il recently, we've called ourselves "Dudes Funny" and focused the podcast on
 
 ### T﻿heme of the podcast
 
-N﻿ow the idea of the podcast is two buddies that havne't hung out in years. Like a lot of millineals, we're reconnecting to fill each other in on the gap between highschool and adulthood. 
+N﻿ow the idea of the podcast is two buddies that haven't hung out for years. Like a lot of millineals, we're reconnecting to fill each other in on the gap between highschool and adulthood.
 
 W﻿e review movies, share recommendations, and talk about cool, paranormal stuff.
 
