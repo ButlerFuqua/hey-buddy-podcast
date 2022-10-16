@@ -33,7 +33,7 @@ export default Vue.extend({
                     link: 'https://podcasts.google.com/feed/aHR0cHM6Ly9mZWVkcy5idXp6c3Byb3V0LmNvbS8xOTQyNjQxLnJzcw==',
                     color: 'bg-blue-500',
                     hoverColor: 'hover:bg-blue-400',
-                    textColor: 'black'
+                    textColor: 'white'
                 },
                 {
                     label: 'iHeart',
