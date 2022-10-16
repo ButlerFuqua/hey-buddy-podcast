@@ -2,6 +2,7 @@
   <div class="p-2 h-full flex flex-col md:flex-row">
     <div class="flex-grow">
       <SiteInfo v-if="landingPageContent === 'info'" />
+      <RecentUpdates v-else-if="landingPageContent === 'updates'" />
       <RecentPodcasts v-else-if="landingPageContent === 'podcast'" />
       <RecentArticles v-else-if="landingPageContent === 'articles'" />
     </div>
@@ -15,6 +16,7 @@ import RecentPodcasts from '../components/widgets/podcast/recentPodcasts/recentP
 import RecentArticles from '../components/widgets/articles/recentArticles/recentArticles.vue'
 import Sidebar from '~/components/layout/sidebar.vue';
 import SiteInfo from '~/components/widgets/siteInfo/siteInfo.vue';
+import RecentUpdates from '~/components/widgets/updates/recentUpdates/recentUpdates.vue';
 
 type Data = {
   title: string | null,
@@ -25,7 +27,7 @@ type Data = {
 export default Vue.extend({
   name: 'IndexPage',
   layout: 'landing',
-  components: { RecentPodcasts, RecentArticles, Sidebar, SiteInfo },
+  components: { RecentPodcasts, RecentArticles, Sidebar, SiteInfo, RecentUpdates },
   data(): Data {
     return {
       title: null,

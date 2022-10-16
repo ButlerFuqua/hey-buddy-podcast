@@ -24,7 +24,7 @@ type Data = {
 }
 
 export default Vue.extend({
-  name: 'ArticlesIndexPage',
+  name: 'UpdatesIndexPage',
   components: { PageTitle, FullLoader },
   data(): Data {
     return {
