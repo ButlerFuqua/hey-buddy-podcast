@@ -35,7 +35,8 @@ type Data = {
 
 export enum NavType {
     nativeLink,
-    internalNewTab
+    internalNewTab,
+    externalPage
 }
 export type NavItem = {
     path: string
@@ -61,6 +62,12 @@ export default Vue.extend({
                     path: "/",
                     label: "Home",
                     type: NavType.nativeLink,
+                    active: false
+                },
+                {
+                    path: "https://forms.gle/Bo5AoEQNYBpJZeS39",
+                    label: "Ask a question",
+                    type: NavType.externalPage,
                     active: false
                 },
                 {
@@ -110,6 +117,10 @@ export default Vue.extend({
                 case NavType.internalNewTab:
                     let routeData = this.$router.resolve({ name: navItem.path, });
                     window.open(routeData.href, "_blank");
+                    break;
+                case NavType.externalPage:
+                    this.toggleMenu();
+                    window.open(navItem.path, "_blank");
                     break;
                 default:
                     console.error(`nav type not covered`, navItem);

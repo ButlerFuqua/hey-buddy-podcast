@@ -6,7 +6,10 @@
                 <img id="landingLogo" class="rounded" v-if="landingLogo" :src="landingLogo" alt="Logo Image" />
                 <div class="p-3">
                     <h1 v-if="title">{{title}}</h1>
-                    <p v-if="description">{{description}}</p>
+                    <p class="mb-2" v-if="description">{{description}}</p>
+                    <a class="py-1 px-2 border rounded border-purple-500 text-green-600 shadow-md hover:bg-purple-100 transition-all ease"
+                        href="https://forms.gle/Bo5AoEQNYBpJZeS39" target="_blank">Ask a
+                        Question</a>
                 </div>
             </div>
         </div>
