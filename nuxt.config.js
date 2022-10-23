@@ -29,6 +29,7 @@ export default {
     landingPageContent: LANDING.landingpagecontent,
     landingLogo: IMAGES.landinglogo,
     aboutimage: IMAGES.aboutimage,
+    askAQuestionLink: process.env.HEY_BUDDY_ASK_A_QUESTION_LINK
   },
 
   // Global page headers: https://go.nuxtjs.dev/config-head

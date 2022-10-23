@@ -8,7 +8,7 @@
                     <h1 v-if="title">{{title}}</h1>
                     <p class="mb-2" v-if="description">{{description}}</p>
                     <a class="py-1 px-2 border rounded border-purple-500 text-green-600 shadow-md hover:bg-purple-100 transition-all ease"
-                        href="https://forms.gle/Bo5AoEQNYBpJZeS39" target="_blank">Ask a
+                        :href="askAQuestionLink" target="_blank">Ask a
                         Question</a>
                 </div>
             </div>
@@ -23,11 +23,14 @@
 import Vue from 'vue';
 import MainNav from '../components/layout/mainNav.vue';
 
+const askAQuestionLink: string = process.env.askAQuestionLink || '/';
+
 type Data = {
     title: string | null,
     description: string | null,
     landingPageContent: string | null,
     landingLogo: string | null,
+    askAQuestionLink: string
 }
 export default Vue.extend({
     name: 'LandingLayout',
@@ -38,6 +41,7 @@ export default Vue.extend({
             description: null,
             landingPageContent: null,
             landingLogo: null,
+            askAQuestionLink,
         }
     },
     async created() {

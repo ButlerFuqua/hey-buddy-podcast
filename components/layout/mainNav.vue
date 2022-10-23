@@ -27,6 +27,8 @@
 import Vue from 'vue'
 import FullLoader from './fullLoader.vue'
 
+const askAQuestionLink: string = process.env.askAQuestionLink || '/';
+
 type Data = {
     navItems: null | NavItem[]
     closed: boolean
@@ -65,7 +67,7 @@ export default Vue.extend({
                     active: false
                 },
                 {
-                    path: "https://forms.gle/Bo5AoEQNYBpJZeS39",
+                    path: askAQuestionLink,
                     label: "Ask a question",
                     type: NavType.externalPage,
                     active: false
