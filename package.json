@@ -7,7 +7,8 @@
     "build": "nuxt build",
     "start": "nuxt start",
     "generate": "nuxt generate",
-    "n": "netlify dev"
+    "n": "netlify dev",
+    "podcast": "node build-podcast-content.js"
   },
   "dependencies": {
     "@nuxt/content": "^1.15.1",
