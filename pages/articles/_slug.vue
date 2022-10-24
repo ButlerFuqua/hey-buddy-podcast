@@ -68,7 +68,8 @@ export default Vue.extend({
     this.articlesDisplayName = process.env.articlesDisplayName || 'Articles';
   },
   async created() {
-    await this.fetchArticle()
+    this.$nuxt.$router.push('/');
+    // await this.fetchArticle()
   }
 })
 </script>

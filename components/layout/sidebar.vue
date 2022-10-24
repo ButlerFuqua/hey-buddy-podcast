@@ -3,7 +3,7 @@
         <!-- <SiteInfo class="siteInfoWidget my-3" v-if="landingPageContent !== 'info'" /> -->
         <RecentUpdates class="my-3" v-if="landingPageContent !== 'updates'" />
         <RecentPodcasts class="my-3" v-if="landingPageContent !== 'podcast'" />
-        <RecentArticles class="my-3" v-if="landingPageContent !== 'articles'" />
+        <!-- <RecentArticles class="my-3" v-if="landingPageContent !== 'articles'" /> -->
     </div>
 </template>
 

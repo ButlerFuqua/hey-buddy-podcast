@@ -72,12 +72,12 @@ export default Vue.extend({
                     type: NavType.externalPage,
                     active: false
                 },
-                {
-                    path: "/articles",
-                    label: this.articlesDisplayName,
-                    type: NavType.nativeLink,
-                    active: false
-                },
+                // {
+                //     path: "/articles",
+                //     label: this.articlesDisplayName,
+                //     type: NavType.nativeLink,
+                //     active: false
+                // },
                 {
                     path: "/podcast",
                     label: "Podcast",

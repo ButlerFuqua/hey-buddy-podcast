@@ -35,7 +35,8 @@ export default Vue.extend({
     },
   },
   async created() {
-    await this.fetchPosts()
+    this.$nuxt.$router.push('/404');
+    // await this.fetchPosts()
   }
 })
 </script>
