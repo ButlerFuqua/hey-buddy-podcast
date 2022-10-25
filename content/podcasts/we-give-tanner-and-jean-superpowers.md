@@ -1,4 +1,3 @@
-
 ---
 title: We give Tanner and Jean superpowers
 id: 10728515
@@ -6,10 +5,9 @@ slug: we-give-tanner-and-jean-superpowers
 featuredimage: https://storage.buzzsprout.com/variants/o8jlnit6h6grsaix3s6v6cr4dlbq/60854458c4d1acdf4e1c2f79c4137142d85d78e379bdafbd69bd34c85f5819ad.jpg
 audio: https://www.buzzsprout.com/1942641/10728515-we-give-tanner-and-jean-superpowers.mp3
 date: 2022-06-02T20:00:00.000-04:00
-description: 
 episodeNumber: 5
 seasonNumber: 1
-totalPlays: 70
+totalPlays: 71
 ---
 The first episode with listener feedback! Thanks for your input!  
   

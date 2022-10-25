@@ -1,4 +1,3 @@
-
 ---
 title: Bad guy brainstorm and maybe superpowers
 id: 10728302
@@ -6,10 +5,9 @@ slug: bad-guy-brainstorm-and-maybe-superpowers
 featuredimage: https://storage.buzzsprout.com/variants/o8jlnit6h6grsaix3s6v6cr4dlbq/60854458c4d1acdf4e1c2f79c4137142d85d78e379bdafbd69bd34c85f5819ad.jpg
 audio: https://www.buzzsprout.com/1942641/10728302-bad-guy-brainstorm-and-maybe-superpowers.mp3
 date: 2022-06-02T19:00:00.000-04:00
-description: 
 episodeNumber: 4
 seasonNumber: 1
-totalPlays: 72
+totalPlays: 73
 ---
 In this episode, we begin a discussion about the "bad guy" and the possibility of giving Tanner and Jean superpowers.  
   

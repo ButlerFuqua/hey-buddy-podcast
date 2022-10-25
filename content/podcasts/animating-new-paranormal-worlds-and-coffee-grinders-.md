@@ -1,4 +1,3 @@
-
 ---
 title: Animating new paranormal worlds and coffee grinders 
 id: 11063615
@@ -6,10 +5,9 @@ slug: animating-new-paranormal-worlds-and-coffee-grinders-
 featuredimage: https://storage.buzzsprout.com/variants/o8jlnit6h6grsaix3s6v6cr4dlbq/60854458c4d1acdf4e1c2f79c4137142d85d78e379bdafbd69bd34c85f5819ad.jpg
 audio: https://www.buzzsprout.com/1942641/11063615-animating-new-paranormal-worlds-and-coffee-grinders.mp3
 date: 2022-08-01T15:00:00.000-04:00
-description: 
 episodeNumber: 10
 seasonNumber: 1
-totalPlays: 135
+totalPlays: 137
 ---
 Tanner and Jean are gonna interact with a lot of paranormal worlds and issues from their small town in Alabama.  
   

@@ -27,7 +27,7 @@ const getAllEpisodes = async (apiKey, podcastId) => {
             },
         }
     );
-    return episodes;
+    return episodes.filter(episode => episode.season_number !== 99);
 }
 
 const deleteCurrentFiles = async () => {
@@ -42,15 +42,13 @@ const writeMdFile = async (episodeData) => {
     // console.log(episodeData)
     const slug = slugifyString(episodeData.title);
     try {
-        let data = `
----
+        let data = `---
 title: ${episodeData.title}
 id: ${episodeData.id}
 slug: ${slug}
 featuredimage: ${episodeData.artwork_url}
 audio: ${episodeData.audio_url}
 date: ${episodeData.published_at}
-description: ${episodeData.summary}
 episodeNumber: ${episodeData.episode_number}
 seasonNumber: ${episodeData.season_number}
 totalPlays: ${episodeData.total_plays}

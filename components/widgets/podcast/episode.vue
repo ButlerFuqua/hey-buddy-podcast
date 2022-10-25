@@ -1,20 +1,20 @@
 <template>
     <div v-if="episode" :class="!hideMeta ? 'border rounded p-2' : ''" class="my-3">
-        <p v-if="!hideMeta" class="text-xl mb-3">{{episode.title}}</p>
+        <p v-if="!hideMeta" class="text-xl mb-3">{{ episode.title }}</p>
         <audio controls class="w-full">
-            <source :src="episode.audio_url" type="audio/mpeg">
+            <source :src="episode.audio" type="audio/mpeg">
             Your browser does not support the audio tag.
         </audio>
         <div v-if="!hideMeta" class="p-1">
             <span class="m-2 text-orange-500">
-                Season {{episode.season_number}}:Ep {{episode.episode_number}}
+                Season {{ episode.seasonNumber }}, Ep {{ episode.episodeNumber }}
             </span>
             <span class="m-2 text-orange-500">
-                plays {{episode.total_plays}}
+                plays {{ episode.totalPlays }}
             </span>
         </div>
         <div v-if="!hideMeta && episode" class="flex justify-end mt-2">
-            <button @click="$router.push(`/podcast/${episode?.id}`)"
+            <button @click="$router.push(`/podcast/${episode?.slug}`)"
                 class="text-green-500 hover:text-green-400 font-bold transition-all eas-in-out p-2 rounded">
                 View Episode
             </button>
@@ -27,10 +27,11 @@
 import Vue from 'vue';
 
 import { Episode } from '../../../mixins/podcast.vue'
+import { EpisodeDTO } from '../../../mixins/podcastV2.vue'
 import FullLoader from '~/components/layout/fullLoader.vue';
 
 type Data = {
-    episode: null | Episode
+    episode: null | EpisodeDTO
 }
 
 export default Vue.extend({
@@ -44,6 +45,7 @@ export default Vue.extend({
     },
     async created() {
         this.episode = this.episodeData;
+        console.log('this.episode', this.episode)
     }
 })
 </script>

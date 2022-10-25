@@ -1,4 +1,3 @@
-
 ---
 title: We decided on a story and changed the character backgrounds
 id: 10891092
@@ -6,10 +5,9 @@ slug: we-decided-on-a-story-and-changed-the-character-backgrounds
 featuredimage: https://storage.buzzsprout.com/variants/o8jlnit6h6grsaix3s6v6cr4dlbq/60854458c4d1acdf4e1c2f79c4137142d85d78e379bdafbd69bd34c85f5819ad.jpg
 audio: https://www.buzzsprout.com/1942641/10891092-we-decided-on-a-story-and-changed-the-character-backgrounds.mp3
 date: 2022-07-05T06:00:00.000-04:00
-description: 
 episodeNumber: 7
 seasonNumber: 1
-totalPlays: 54
+totalPlays: 55
 ---
 We finally have a story from beginning to ending! It's just a high-level overview for now, but we'll spend each episode talking about all the scenes.  
   

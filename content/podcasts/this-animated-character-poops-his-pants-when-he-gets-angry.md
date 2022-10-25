@@ -1,4 +1,3 @@
-
 ---
 title: This animated character poops his pants when he gets angry
 id: 11051340
@@ -6,10 +5,9 @@ slug: this-animated-character-poops-his-pants-when-he-gets-angry
 featuredimage: https://storage.buzzsprout.com/variants/o8jlnit6h6grsaix3s6v6cr4dlbq/60854458c4d1acdf4e1c2f79c4137142d85d78e379bdafbd69bd34c85f5819ad.jpg
 audio: https://www.buzzsprout.com/1942641/11051340-this-animated-character-poops-his-pants-when-he-gets-angry.mp3
 date: 2022-07-29T21:00:00.000-04:00
-description: 
 episodeNumber: 9
 seasonNumber: 1
-totalPlays: 130
+totalPlays: 132
 ---
 Tanner is gonna poop his pants every time he gets excited, mad, or happy. There ya go.  
   
