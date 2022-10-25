@@ -1,5 +1,5 @@
 <template>
-    <div v-if="episode" :class="!hideMeta ? 'border rounded p-2' : ''" class="my-3">
+    <div v-if="episode" :class="!hideMeta ? 'border-b-2 rounded p-2' : ''" class="my-3">
         <p v-if="!hideMeta" class="text-xl mb-3">{{ episode.title }}</p>
         <audio controls class="w-full">
             <source :src="episode.audio" type="audio/mpeg">
