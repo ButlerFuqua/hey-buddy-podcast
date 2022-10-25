@@ -39,7 +39,6 @@ const deleteCurrentFiles = async () => {
 
 const nhm = new NodeHtmlMarkdown();
 const writeMdFile = async (episodeData) => {
-    // console.log(episodeData)
     const slug = slugifyString(episodeData.title);
     try {
         let data = `---

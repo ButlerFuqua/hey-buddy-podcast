@@ -26,9 +26,8 @@
 <script lang="ts">
 import Vue from 'vue';
 
-import { Episode } from '../../../mixins/podcast.vue'
-import { EpisodeDTO } from '../../../mixins/podcastV2.vue'
 import FullLoader from '~/components/layout/fullLoader.vue';
+import { EpisodeDTO } from '~/pages/podcast/index.vue';
 
 type Data = {
     episode: null | EpisodeDTO
@@ -45,7 +44,6 @@ export default Vue.extend({
     },
     async created() {
         this.episode = this.episodeData;
-        console.log('this.episode', this.episode)
     }
 })
 </script>

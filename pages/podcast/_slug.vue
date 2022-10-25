@@ -76,7 +76,6 @@ export default Vue.extend({
     },
     async created() {
         await this.fetchEpisode();
-        console.log(this.podcastEpisode)
     }
 })
 </script>
