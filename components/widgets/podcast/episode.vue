@@ -7,7 +7,7 @@
         </audio>
         <div v-if="!hideMeta" class="p-1">
             <span class="m-2 text-orange-500">
-                Season {{ episode.seasonNumber }}, Ep {{ episode.episodeNumber }}
+                Ep {{ episode.seasonNumber }}:{{ episode.episodeNumber }}
             </span>
             <span class="m-2 text-orange-500">
                 plays {{ episode.totalPlays }}
