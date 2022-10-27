@@ -16,4 +16,4 @@ N﻿ow the idea of the podcast is two buddies that haven't hung out for years. L
 
 W﻿e review movies, share recommendations, and talk about cool, paranormal stuff.
 
-Join us as we catch up on life, movies, spirituality, and of course sasquatch.
+Join us as we catch up on life, movies, spirituality, and movies.

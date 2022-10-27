@@ -1,6 +1,6 @@
 <template>
     <div>
-        <PageTitle title="Hey Buddy" />
+        <PageTitle title="Butler and William Podcast" />
         <ListenPodcastOn />
         <div class="p-2">
             <div v-if="episodes">
