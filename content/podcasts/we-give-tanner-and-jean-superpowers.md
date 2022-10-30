@@ -7,7 +7,7 @@ audio: https://www.buzzsprout.com/1942641/10728515-we-give-tanner-and-jean-super
 date: 2022-06-02T20:00:00.000-04:00
 episodeNumber: 5
 seasonNumber: 1
-totalPlays: 71
+totalPlays: 73
 ---
 The first episode with listener feedback! Thanks for your input!  
   

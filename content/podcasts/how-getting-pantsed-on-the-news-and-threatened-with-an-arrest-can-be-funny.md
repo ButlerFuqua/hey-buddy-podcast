@@ -7,7 +7,7 @@ audio: https://www.buzzsprout.com/1942641/10961920-how-getting-pantsed-on-the-ne
 date: 2022-07-14T10:00:00.000-04:00
 episodeNumber: 8
 seasonNumber: 1
-totalPlays: 134
+totalPlays: 157
 ---
 We go over the scene where Tanner and Jean get made fun of in the local news. They get pantsed! Also, let's talk about how getting threatened with an arrest is funny  
   

@@ -7,7 +7,7 @@ audio: https://www.buzzsprout.com/1942641/11063615-animating-new-paranormal-worl
 date: 2022-08-01T15:00:00.000-04:00
 episodeNumber: 10
 seasonNumber: 1
-totalPlays: 137
+totalPlays: 161
 ---
 Tanner and Jean are gonna interact with a lot of paranormal worlds and issues from their small town in Alabama.  
   
