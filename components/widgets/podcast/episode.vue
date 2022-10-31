@@ -10,7 +10,7 @@
                 Ep {{ episode.seasonNumber }}:{{ episode.episodeNumber }}
             </span>
             <span class="m-2 text-orange-500">
-                plays {{ episode.totalPlays }}
+                plays {{ totalPlays || episode.totalPlays }}
             </span>
         </div>
         <div v-if="!hideMeta && episode" class="flex justify-end mt-2">
@@ -24,13 +24,16 @@
 </template>
   
 <script lang="ts">
+import axios, { AxiosResponse } from 'axios';
 import Vue from 'vue';
 
 import FullLoader from '~/components/layout/fullLoader.vue';
 import { EpisodeDTO } from '~/pages/podcast/index.vue';
+import { EpisodeAxiosDTO } from '~/pages/podcast/_slug.vue';
 
 type Data = {
     episode: null | EpisodeDTO
+    totalPlays: null | number
 }
 
 export default Vue.extend({
@@ -39,11 +42,26 @@ export default Vue.extend({
     components: { FullLoader },
     data(): Data {
         return {
-            episode: null
+            episode: null,
+            totalPlays: null
         }
+    },
+    methods: {
+        async getUpdatedTotalPlays() {
+            const { episode: podcastEpisode } = this;
+            if (podcastEpisode) {
+                try {
+                    const { data: episode }: AxiosResponse<EpisodeAxiosDTO> = await axios.post('/api/one-episode', { episodeId: podcastEpisode.id });
+                    this.totalPlays = episode.total_plays;
+                } catch (error) {
+                    console.error(error)
+                }
+            }
+        },
     },
     async created() {
         this.episode = this.episodeData;
+        await this.getUpdatedTotalPlays();
     }
 })
 </script>

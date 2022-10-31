@@ -5,7 +5,7 @@
             <p class="mb-2">Published: {{ returnFriendlyDate(podcastEpisode.date) }}</p>
             <p class="mb-2">Season: {{ podcastEpisode.seasonNumber }}</p>
             <p class="mb-2">Episode: {{ podcastEpisode.episodeNumber }}</p>
-            <p class="mb-2">Total Plays: {{ podcastEpisode.totalPlays }}</p>
+            <p class="mb-2">Total Plays: {{ totalPlays || podcastEpisode.totalPlays }}</p>
         </div>
         <PodcastEpisode :episodeData="podcastEpisode" :hideMeta="true" />
         <div class="my-5 border-t-2 pt-3">
@@ -31,12 +31,17 @@ import PageTitle, { BreadCrumb } from '../../components/layout/pageTitle.vue'
 import { returnFriendlyDate } from '../../utils/string.utils';
 import FullLoader from '~/components/layout/fullLoader.vue';
 import { EpisodeDTO } from './index.vue';
-import { FetchReturn } from '@nuxt/content/types/query-builder';
+import axios, { AxiosResponse } from 'axios';
+
+export type EpisodeAxiosDTO = {
+    total_plays: number
+}
 
 type Data = {
     breadCrumbs: null | BreadCrumb[]
-    podcastEpisode: null | FetchReturn
+    podcastEpisode: null | EpisodeDTO
     errorMessage: null | string
+    totalPlays: null | number
 }
 
 export default Vue.extend({
@@ -46,13 +51,14 @@ export default Vue.extend({
         return {
             breadCrumbs: null,
             podcastEpisode: null,
-            errorMessage: null
+            errorMessage: null,
+            totalPlays: null
         }
     },
     methods: {
         async fetchEpisode() {
             const slug = this.$nuxt.$route.params.slug;
-            this.podcastEpisode = (await this.$content(`podcasts/${slug}`).fetch()) as any as FetchReturn;
+            this.podcastEpisode = (await this.$content(`podcasts/${slug}`).fetch()) as any as EpisodeDTO;
             this.breadCrumbs = [
                 {
                     label: 'Podcast',
@@ -66,6 +72,18 @@ export default Vue.extend({
                 },
             ]
         },
+        async getUpdatedTotalPlays() {
+            const { podcastEpisode } = this;
+            if (podcastEpisode) {
+                try {
+                    const { data: episode }: AxiosResponse<EpisodeAxiosDTO> = await axios.post('/api/one-episode', { episodeId: podcastEpisode.id });
+                    this.totalPlays = episode.total_plays;
+                } catch (error) {
+                    console.error(error)
+                    this.errorMessage = `Error getting podcast episode`
+                }
+            }
+        },
         returnFriendlyDate(dateString: string) {
             return returnFriendlyDate(dateString);
         },
@@ -76,6 +94,7 @@ export default Vue.extend({
     },
     async created() {
         await this.fetchEpisode();
+        await this.getUpdatedTotalPlays();
     }
 })
 </script>
