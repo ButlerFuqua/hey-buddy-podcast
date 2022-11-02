@@ -7,7 +7,7 @@ audio: https://www.buzzsprout.com/1942641/11473809-encountering-bigfoot-and-revi
 date: 2022-10-30T14:00:00.000-04:00
 episodeNumber: 1
 seasonNumber: 2
-totalPlays: 0
+totalPlays: 11
 ---
 We're shifting and rebranding the Podcast. It is now called "Hey Buddy," and we're taking the focus away from just coming up with a movie. Join us as we catch up on life, movies, spirituality, and of course sasquatch.  
   

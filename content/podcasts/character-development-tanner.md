@@ -7,7 +7,7 @@ audio: https://www.buzzsprout.com/1942641/10383400-character-development-tanner.
 date: 2022-04-05T12:00:00.000-04:00
 episodeNumber: 2
 seasonNumber: 1
-totalPlays: 96
+totalPlays: 97
 ---
 **In this episode**, we dive into a little bit of Tanner's personality and background.   
   

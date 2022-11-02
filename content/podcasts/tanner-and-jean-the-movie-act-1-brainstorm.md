@@ -7,7 +7,7 @@ audio: https://www.buzzsprout.com/1942641/10354687-tanner-and-jean-the-movie-act
 date: 2022-03-31T13:00:00.000-04:00
 episodeNumber: 1
 seasonNumber: 1
-totalPlays: 105
+totalPlays: 106
 ---
 **In this episode**, we introduce _Tanner and Jean the Movie_ and discuss ideas for Act1.  
   

@@ -7,7 +7,7 @@ audio: https://www.buzzsprout.com/1942641/10891092-we-decided-on-a-story-and-cha
 date: 2022-07-05T06:00:00.000-04:00
 episodeNumber: 7
 seasonNumber: 1
-totalPlays: 56
+totalPlays: 57
 ---
 We finally have a story from beginning to ending! It's just a high-level overview for now, but we'll spend each episode talking about all the scenes.  
   

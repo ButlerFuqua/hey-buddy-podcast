@@ -7,7 +7,7 @@ audio: https://www.buzzsprout.com/1942641/10766858-kids-in-their-town-are-vanish
 date: 2022-06-09T16:00:00.000-04:00
 episodeNumber: 6
 seasonNumber: 1
-totalPlays: 76
+totalPlays: 77
 ---
 First off, do not try and eat a peanut butter and salmon sandwich. More on that in the episode.
 
