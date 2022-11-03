@@ -17,8 +17,8 @@ export default Vue.extend({
                 {
                     label: 'Spotify',
                     link: 'https://open.spotify.com/show/1JVuhEvDljWSbXNUu8Y306',
-                    color: 'bg-green-500',
-                    hoverColor: 'hover:bg-green-400',
+                    color: 'bg-green-400',
+                    hoverColor: 'hover:bg-green-300',
                     textColor: 'black'
                 },
                 {
