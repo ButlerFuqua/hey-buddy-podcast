@@ -2,7 +2,7 @@
     <div class="p-2 overflow-scroll flex flex-nowrap items-center">
         <a :class="`${platform.color} ${platform.hoverColor} text-${platform.textColor} py-1 px-2 transition-all ease rounded shadow m-1`"
             v-for="platform in platforms" :key="platform.label" :href="platform.link" target="_blank">
-            {{                               platform.label                               }}
+            {{ platform.label }}
         </a>
     </div>
 </template>
@@ -31,8 +31,8 @@ export default Vue.extend({
                 {
                     label: 'Amazon',
                     link: 'https://music.amazon.com/podcasts/ed158210-9e3f-49a1-8e66-bd77c356d48f/butler-and-william-talk-about-stuff?refMarker=null',
-                    color: 'bg-yellow-500',
-                    hoverColor: 'hover:bg-yellow-400',
+                    color: 'bg-teal-400',
+                    hoverColor: 'hover:bg-teal-300',
                     textColor: 'black'
                 },
                 {
