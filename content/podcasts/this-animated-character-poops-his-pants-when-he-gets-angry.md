@@ -7,7 +7,7 @@ audio: https://www.buzzsprout.com/1942641/11051340-this-animated-character-poops
 date: 2022-07-29T21:00:00.000-04:00
 episodeNumber: 9
 seasonNumber: 1
-totalPlays: 164
+totalPlays: 176
 ---
 Tanner is gonna poop his pants every time he gets excited, mad, or happy. There ya go.  
   

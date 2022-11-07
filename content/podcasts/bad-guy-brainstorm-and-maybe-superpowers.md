@@ -7,7 +7,7 @@ audio: https://www.buzzsprout.com/1942641/10728302-bad-guy-brainstorm-and-maybe-
 date: 2022-06-02T19:00:00.000-04:00
 episodeNumber: 4
 seasonNumber: 1
-totalPlays: 77
+totalPlays: 78
 ---
 In this episode, we begin a discussion about the "bad guy" and the possibility of giving Tanner and Jean superpowers.  
   

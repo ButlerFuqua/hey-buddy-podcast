@@ -7,7 +7,7 @@ audio: https://www.buzzsprout.com/1942641/10444967-who-are-they-and-what-they-go
 date: 2022-04-15T11:00:00.000-04:00
 episodeNumber: 3
 seasonNumber: 1
-totalPlays: 110
+totalPlays: 111
 ---
 **In this episode**, we talk more about who our characters are. We also start discussing what Tanner and Jean are going to be doing in the movie. What's their goal?  
   
